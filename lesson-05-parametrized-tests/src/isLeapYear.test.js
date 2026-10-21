@@ -1,5 +1,10 @@
-import { isLeapYear } from "./isLeapYear.js";
+import { isLeapYear } from "./isLeapYear";
 
-// Задание 1: покройте функцию через test.each в форме МАССИВА МАССИВОВ.
-
-test.todo("isLeapYear: 4/100/400 через test.each (массив массивов)");
+test.each([
+  [2024, true],
+  [2023, false],
+  [1900, false],
+  [2000, true],
+])("isLeapYear(%i) возвращает %s", (year, expected) => {
+  expect(isLeapYear(year)).toBe(expected);
+});

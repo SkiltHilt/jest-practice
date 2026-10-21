@@ -1,6 +1,30 @@
 import { convertToRub } from "./convert.js";
 import { getRate } from "./currency.js";
 
-// Задание 1: подмените ВЕСЬ модуль currency через jest.mock и задайте ответ getRate.
+jest.mock("./currency.js");
+
+const { getRate } = require("./currency.js");
+const { convertToRub } = require("./convert.js");
+
+beforeEach(() => {
+  getRate.mockReset();
+});
+
+test("переводит сумму в рубли по курсу валюты", () => {
+  getRate.mockReturnValue(90);
+
+  const result = convertToRub(2, "USD");
+
+  expect(result).toBe(180);
+  expect(getRate).toHaveBeenCalledWith("USD");
+});
+
+test("пробрасывает ошибку получения курса", () => {
+  getRate.mockImplementation(() => {
+    throw new Error("нет связи");
+  });
+
+  expect(() => convertToRub(2, "USD")).toThrow("нет связи");
+});
 
 test.todo("convertToRub: переводит сумму по курсу из модуля (jest.mock)");

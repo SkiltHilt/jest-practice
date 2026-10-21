@@ -2,5 +2,7 @@
 import { getRate } from "./currency.js";
 
 export function convertToRub(amount, code) {
-  throw new Error("Реализуйте функцию convertToRub (см. README.md)");
+  return amount * getRate(code);
 }
+
+module.exports = { convertToRub };

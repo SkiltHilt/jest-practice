@@ -1,6 +1,15 @@
 import { getDiscount } from "./getDiscount.js";
 
-// Задание 3: покройте функцию через test.each, ОБЯЗАТЕЛЬНО проверив границы
-// 1000, 2000, 5000 (значение ровно на границе попадает в новую ступень).
+test.each([
+  [999, 0],
+  [1000, 5],
+  [1999, 5],
+  [2000, 10],
+  [4999, 10],
+  [5000, 20],
+  [6000, 20],
+])("getDiscount(%i) возвращает %i", (total, expected) => {
+  expect(getDiscount(total)).toBe(expected);
+});
 
 test.todo("getDiscount: ступени и точные границы через test.each");
