@@ -3,9 +3,6 @@ import { getRate } from "./currency.js";
 
 jest.mock("./currency.js");
 
-const { getRate } = require("./currency.js");
-const { convertToRub } = require("./convert.js");
-
 beforeEach(() => {
   getRate.mockReset();
 });
