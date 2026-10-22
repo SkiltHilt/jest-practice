@@ -4,6 +4,4 @@ export function logEvent(name) {
   console.log(`Событие: ${name}`);
   return true;
 }
-
-module.exports = { logEvent };
 }

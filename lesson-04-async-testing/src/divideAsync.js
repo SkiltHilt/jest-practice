@@ -7,4 +7,3 @@ export async function divideAsync(a, b) {
   return a / b;
 }
 
-module.exports = { divideAsync };

@@ -4,5 +4,3 @@ export function getUserName(repo, id) {
 
   return user?.name ?? "Аноним";
 }
-
-module.exports = { getUserName };

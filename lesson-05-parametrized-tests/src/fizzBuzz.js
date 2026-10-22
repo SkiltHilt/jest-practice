@@ -6,4 +6,3 @@ export function fizzBuzz(n) {
   return String(n);
 }
 
-module.exports = { fizzBuzz };

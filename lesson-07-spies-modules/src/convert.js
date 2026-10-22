@@ -5,4 +5,3 @@ export function convertToRub(amount, code) {
   return amount * getRate(code);
 }
 
-module.exports = { convertToRub };

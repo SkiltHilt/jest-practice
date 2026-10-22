@@ -13,4 +13,3 @@ export async function fetchUserById(id) {
   return user;
 }
 
-module.exports = { fetchUserById };

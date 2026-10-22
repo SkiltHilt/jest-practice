@@ -5,5 +5,3 @@ export function getDiscount(total) {
 
   return 0;
 }
-
-module.exports = { getDiscount };

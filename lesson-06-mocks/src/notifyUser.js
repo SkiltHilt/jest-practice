@@ -7,5 +7,3 @@ export function notifyUser(mailer, user, text) {
   mailer.send(user.email, text);
   return true;
 }
-
-module.exports = { notifyUser };
